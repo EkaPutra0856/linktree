@@ -4,134 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LinkTree Bio</title>
-  <script src="script.js"></script>
 
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: sans-serif;
-      overflow-x: hidden;
-    }
-
-    .bg-video {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .button-container {
-      position: absolute;
-      bottom: 10px;
-      left: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .glow-button {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      color: white;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-radius 0.3s ease;
-      animation: idlePulse 2.5s ease-in-out infinite;
-      text-decoration: none;
-    }
-
-    .glow-button:hover {
-      transform: scale(1.03);
-    }
-
-    .glow-button::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
-      transform: rotate(45deg);
-      animation: glossySweep 3s infinite;
-    }
-
-    .glow-button img {
-      width: 20%;
-      max-height: 40px;
-      margin-right: 12px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .button-text {
-      width: 80%;
-      text-align: left;
-    }
-
-    @keyframes idlePulse {
-      0%, 100% {
-        transform: scale(1);
-        border-radius: 12px;
-      }
-      50% {
-        transform: scale(1.01);
-        border-radius: 20px;
-      }
-    }
-
-    @keyframes glossySweep {
-      0% {
-        transform: translateX(-100%) rotate(45deg);
-      }
-      50% {
-        transform: translateX(100%) rotate(45deg);
-      }
-      100% {
-        transform: translateX(-100%) rotate(45deg);
-      }
-    }
-  </style>
+  <!-- Link ke file CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Link ke file JS eksternal -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <video class="bg-video" autoplay loop muted playsinline>
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted playsinline>
     <source src="/your-video.mp4" type="video/mp4">
     Browser tidak mendukung video.
   </video>
 
-  <div class="button-container">
-    <a href="https://example.com/1" class="glow-button">
-      <img src="1.jpg" alt="1">
-      <div class="button-text">Tombol Satu</div>
-    </a>
-    <a href="https://example.com/2" class="glow-button">
-      <img src="2.jpeg" alt="2">
-      <div class="button-text">Tombol Dua</div>
-    </a>
-    <a href="https://example.com/3" class="glow-button">
-      <img src="3.png" alt="3">
-      <div class="button-text">Tombol Tiga</div>
-    </a>
-    <a href="https://example.com/4" class="glow-button">
-      <img src="4.jpg" alt="4">
-      <div class="button-text">Tombol Empat</div>
-    </a>
+  <!-- Profile Picture Above Buttons -->
+  <div class="profile-container">
+    <img src="Profil/2.jpeg" alt="Profile Picture" class="profile-picture">
   </div>
 
+  <!-- Welcome Text Below Profile Picture -->
+  <div class="welcome-text">
+    <h2>Selamat Datang</h2>
+    <p>Ready Joki Honkai Star Rail & Wuthering Waves</p>
+  </div>
+
+  <!-- Tombol Link -->
+   <div class="container-group">
+  <div class="button-container">
+    <a href="https://saweria.co/Epsi" class="glow-button">
+      <img src="3.png" alt="1">
+      <div class="button-text">Link Saweria</div>
+    </a>
+    <a href="https://wa.me/085740875048" class="glow-button">
+      <img src="2.jpeg" alt="2">
+      <div class="button-text">WA Admin</div>
+    </a>
+    <a href="testimoni.html" class="glow-button">
+      <img src="1.jpg" alt="3">
+      <div class="button-text">Lihat Testimoni</div>
+    </a>
+    <a href="payment.html" class="glow-button">
+      <img src="4.jpg" alt="4">
+      <div class="button-text">Payment</div>
+    </a>
+  </div>
+</div>
 </body>
 </html>

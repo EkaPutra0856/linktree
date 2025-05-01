@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Background Video */
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Container Tombol */
+
+  .container-group{
+    margin-top: 100px;
+  }
+  .button-container {
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 16px;
+  }
+  
+ /* Tombol Glow dengan Gambar (default untuk tombol 1 dan 3) */
+.glow-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    animation: idlePulse 2.5s ease-in-out infinite;
+    text-decoration: none;
+  }
+  
+  .glow-button:hover {
+    transform: scale(1.03);
+  }
+  
+  .glow-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    transform: rotate(45deg);
+    animation: glossySweep 3s infinite;
+  }
+  
+  .glow-button img {
+    width: 20%;
+    max-height: 40px;
+    margin-right: 12px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .button-text {
+    width: 80%;
+    text-align: left;
+  }
+  
+  /* Tombol 2 dan 4 dengan gradasi abu muda dan teks biru */
+  .button-container .glow-button:nth-child(2),
+  .button-container .glow-button:nth-child(4) {
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc); /* Gradasi abu muda */
+    color: #007bff; /* Teks biru */
+    text-decoration: none; /* Hapus efek gradasi pada teks */
+  }
+  
+  .glow-button:nth-child(2) img,
+  .glow-button:nth-child(4) img {
+    width: 20%;
+    max-height: 40px;
+    margin-right: 12px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Container for the profile picture */
+  .profile-container {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust space between profile and text */
+  }
+  
+  /* Styling for the profile picture */
+  .profile-picture {
+    width: 100px; /* Adjust the size */
+    height: 100px; /* Adjust the size */
+    border-radius: 50%; /* To make it circular */
+    border: 2px solid #fff; /* Optional: adds a white border around the image */
+    object-fit: cover; /* Ensures the image fills the circle */
+    margin-top: 20px; /* Adds some space from the top */
+  }
+  
+  /* Styling for the welcome text */
+  .welcome-text {
+    text-align: center;
+    margin-bottom: 30px; /* Adds space between the text and the button container */
+  }
+  
+  .welcome-text h2 {
+    font-size: 24px; /* You can adjust the size as needed */
+    color: #fff; /* White color for the title */
+    margin: 0;
+  }
+  
+  .welcome-text p {
+    font-size: 18px;
+    color: #fff; /* White color for the description */
+    margin-top: 5px;
+  }
+  
+  @keyframes idlePulse {
+    0%, 100% {
+      transform: scale(1);
+      border-radius: 12px;
+    }
+    50% {
+      transform: scale(1.01);
+      border-radius: 20px;
+    }
+  }
+  
+  @keyframes glossySweep {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    50% {
+      transform: translateX(100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+  }
+  

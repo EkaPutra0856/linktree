@@ -1,0 +1,200 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Background Video */
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Container Tombol */
+  .button-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1; /* supaya muncul di atas background video */
+    align-items: center;
+  }
+  
+  /* Tombol Glow dengan Gambar */
+  .glow-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    animation: idlePulse 2.5s ease-in-out infinite;
+    text-decoration: none;
+  }
+  
+  .glow-button {
+    width: 80vw;        /* 80% dari lebar viewport */
+    max-width: 400px;   /* tapi tidak lebih dari 400px */
+    margin: 0 auto;     /* Membuat tombol berada di tengah */
+  }
+  
+  .glow-button:hover {
+    transform: scale(1.03);
+  }
+  
+  .glow-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    transform: rotate(45deg);
+    animation: glossySweep 3s infinite;
+  }
+  
+  .glow-button img {
+    width: 20%;
+    max-height: 40px;
+    margin-right: 12px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .button-text {
+    width: 80%;
+    text-align: left;
+  }
+  
+  @keyframes idlePulse {
+    0%, 100% {
+      transform: scale(1);
+      border-radius: 12px;
+    }
+    50% {
+      transform: scale(1.01);
+      border-radius: 20px;
+    }
+  }
+  
+  @keyframes glossySweep {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    50% {
+      transform: translateX(100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+  }
+  
+/* Modal Pembayaran */
+.modal {
+    display: none; /* Awalnya modal disembunyikan */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0%, -0%); /* Memastikan modal berada tepat di tengah */
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Button Close */
+  #closeBtn {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+  }
+  
+  /* Bagian Gambar */
+  #paymentImg {
+    max-width: 100px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Container untuk Teks dan Tombol Copy */
+  .payment-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; /* Ruang antara elemen */
+    margin-bottom: 20px;
+  }
+  
+  .payment-text {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  #paymentInfo {
+    width: calc(100% - 10px); /* Lebar penuh modal dikurangi padding */
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #ccc; /* Agar lebih terlihat */
+    border-radius: 5px;
+  }
+  
+  #copyBtn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #copyBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Teks Keterangan Biasa */
+  .payment-details {
+    font-size: 14px;
+    color: #555;
+  }
+  

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimoni Joki</title>
+  <link rel="stylesheet" href="style.css"> <!-- Jika ini berisi background video CSS -->
+  <link rel="stylesheet" href="testimoni.css"> <!-- Untuk styling galeri & popup -->
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted playsinline>
+    <source src="/your-video.mp4" type="video/mp4">
+    Browser tidak mendukung video.
+  </video>
+  
+  <!-- Judul dan Tombol Back -->
+  <div class="header">
+    <a href="index.html" class="back-button">← Kembali</a>
+    <h1 class="judul">Bukti Testimoni Joki</h1>
+  </div>
+
+  <!-- Galeri Gambar -->
+  <div class="gallery" id="gallery"></div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img id="popupImg" src="" alt="Popup Image">
+  </div>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popupImg");
+    const closeBtn = document.getElementById("closeBtn");
+
+    const totalImages = 6;
+    const path = "testimoni/";
+
+    for (let i = 1; i <= totalImages; i++) {
+      const img = document.createElement("img");
+      img.src = `${path}${i}.jpg`;
+      img.alt = `Testimoni ${i}`;
+      img.onerror = () => img.remove(); // hapus gambar kalau tidak ditemukan
+      img.addEventListener("click", () => {
+        popupImg.src = img.src;
+        popup.classList.add("show");
+      });
+      gallery.appendChild(img);
+    }
+
+    closeBtn.addEventListener("click", () => popup.classList.remove("show"));
+    popup.addEventListener("click", e => {
+      if (e.target === popup) popup.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>

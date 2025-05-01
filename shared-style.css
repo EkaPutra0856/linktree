@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+  }
+  
+  .judul {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+  }
+  
+  /* Tombol Kembali */
+  .back-button {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid white;
+    transition: 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
