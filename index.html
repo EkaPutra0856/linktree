@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LinkTree Bio</title>
+  <script src="script.js"></script>
+
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -15,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* Background Video */
     .bg-video {
       position: fixed;
       top: 0; left: 0;
@@ -25,7 +26,6 @@
       z-index: -1;
     }
 
-    /* Container Tombol */
     .button-container {
       position: absolute;
       bottom: 10px;
@@ -36,8 +36,9 @@
       gap: 16px;
     }
 
-    /* Tombol Glossy + Idle Animasi */
     .glow-button {
+      display: flex;
+      align-items: center;
       background: linear-gradient(135deg, #007bff, #00c6ff);
       color: white;
       padding: 14px;
@@ -45,12 +46,12 @@
       border-radius: 12px;
       font-size: 16px;
       font-weight: bold;
-      text-align: center;
       cursor: pointer;
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, border-radius 0.3s ease;
       animation: idlePulse 2.5s ease-in-out infinite;
+      text-decoration: none;
     }
 
     .glow-button:hover {
@@ -67,6 +68,19 @@
       background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
       transform: rotate(45deg);
       animation: glossySweep 3s infinite;
+    }
+
+    .glow-button img {
+      width: 20%;
+      max-height: 40px;
+      margin-right: 12px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .button-text {
+      width: 80%;
+      text-align: left;
     }
 
     @keyframes idlePulse {
@@ -95,16 +109,28 @@
 </head>
 <body>
 
-  <!-- Background Video -->
   <video class="bg-video" autoplay loop muted playsinline>
     <source src="/your-video.mp4" type="video/mp4">
     Browser tidak mendukung video.
   </video>
 
-  <!-- Tombol Link -->
   <div class="button-container">
-    <a href="https://youtube.com" target="_blank" class="glow-button">Link ke YouTube</a>
-    <a href="https://yahoo.com" target="_blank" class="glow-button">Link ke Yahoo</a>
+    <a href="https://example.com/1" class="glow-button">
+      <img src="1.jpg" alt="1">
+      <div class="button-text">Tombol Satu</div>
+    </a>
+    <a href="https://example.com/2" class="glow-button">
+      <img src="2.jpeg" alt="2">
+      <div class="button-text">Tombol Dua</div>
+    </a>
+    <a href="https://example.com/3" class="glow-button">
+      <img src="3.png" alt="3">
+      <div class="button-text">Tombol Tiga</div>
+    </a>
+    <a href="https://example.com/4" class="glow-button">
+      <img src="4.jpg" alt="4">
+      <div class="button-text">Tombol Empat</div>
+    </a>
   </div>
 
 </body>
