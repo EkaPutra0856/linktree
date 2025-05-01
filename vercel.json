@@ -1,0 +1,6 @@
+{
+  "rootDirectory": "linktree-bio",
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ]
+}
