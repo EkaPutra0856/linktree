@@ -221,7 +221,7 @@
 .image-link {
     position: fixed; /* Agar gambar tetap di posisi yang sama saat scroll */
     bottom: -10px; /* Posisi gambar 10px dari bawah */
-    right: -40px; /* Posisi gambar 10px dari kanan */
+    right: -60px; /* Posisi gambar 10px dari kanan */
     transform: rotateY(180deg); /* Membalik gambar secara horizontal */
     z-index: 10; /* Agar gambar muncul di atas elemen lain */
     animation: flipAnimation 6s infinite; /* Setiap 6 detik animasi ini berulang */
